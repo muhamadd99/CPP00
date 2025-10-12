@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 15:40:34 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/12 22:28:26 by mbani-ya         ###   ########.fr       */
+/*   Created: 2025/10/12 18:25:29 by mbani-ya          #+#    #+#             */
+/*   Updated: 2025/10/12 18:26:58 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 # include <iostream>
 # include <string>
-# include "Contact.hpp"
 
-class PhoneBook {
+class Contact {
 private:
-	Contact contacts[8];
-	int		contactCount;
+	std::string firstName;
+	std::string lastName;
+	std::string nickName;
+	std::string phoneNumber;
+	std::string darkestSecret;
 
 public:
-	PhoneBook();
-	void	addContact(); //no need parameter bcus cin take directly
-	void	searchContacts() const;
-	bool	isFull() const; //to check the contacts reached 8th array
-}; //end of class definition
+	void setContact(std::string firstName, std::string lastName,
+					std::string nickname, std::string phoneNumber,
+					std::string darkestSecret);
+	void displaySummary(int index) const;
+	void displayFull() const;
+	bool isEmpty() const;
+}
 
 #endif
