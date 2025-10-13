@@ -6,7 +6,7 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 18:25:29 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/12 18:26:58 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/13 16:10:06 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ public:
 	void displaySummary(int index) const;
 	void displayFull() const;
 	bool isEmpty() const;
-}
+};
 
 #endif
