@@ -6,7 +6,7 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 14:58:05 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/13 14:58:41 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/17 10:51:29 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main()
 	
 	while (true)
 	{
-		std::cout << "What do you want? ADD / SEARCH / EXIT";
+		std::cout << "What do you want? ADD / SEARCH / EXIT" << std::endl;
 		std::getline(std::cin, command);
 
 		if (command == "ADD")
