@@ -6,23 +6,23 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 17:05:12 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/17 10:48:47 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/17 22:06:27 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./PhoneBook.hpp"
+#include "./Contact.hpp"
 
 void	Contact::displayFull() const
 {
 	if (isEmpty()) { //do i need to print it wrong
-		std::cout << "No Contacts to display. méiyǒu liánxì rén" << std::endl;
+		std::cout << RED << "No Contacts to display. méiyǒu liánxì rén" << RESET << std::endl;
 		return ;
 	}
-	std::cout << "First Name / míng zi: " << firstName << std::endl;
-	std::cout << "Last Name / xìng: " << lastName << std::endl;
-	std::cout << "Nickname / chuò hào: " << nickName << std::endl;
-	std::cout << "Phone Number / diàn huà hào mǎ: " << phoneNumber << std::endl;
-	std::cout << "Darkest Secret / zuì shēn de mìmì: " << darkestSecret << std::endl;
+	std::cout << CYAN << "First Name / míng zi: " << firstName << RESET << std::endl;
+	std::cout << CYAN << "Last Name / xìng: " << lastName << RESET << std::endl;
+	std::cout << CYAN << "Nickname / chuò hào: " << nickName << RESET << std::endl;
+	std::cout << CYAN << "Phone Number / diàn huà hào mǎ: " << phoneNumber << RESET << std::endl;
+	std::cout << CYAN << "Darkest Secret / zuì shēn de mìmì: " << darkestSecret << RESET << std::endl;
 }
 
 bool	Contact::isEmpty() const
@@ -49,19 +49,6 @@ void	Contact::displaySummary(int index) const
 		std::cout << std::setw(10) << firstName;
 	std::cout << "|";
 
-	//lastname
-	if (lastName.length() > 10)
-		std::cout << lastName.substr(0,9) << ".";
-	else
-		std::cout << std::setw(10) << lastName;
-	std::cout << "|";
-
-	//nickName
-	if (nickName.length() > 10)
-		std::cout << nickName.substr(0,9) << ".";
-	else
-		std::cout << std::setw(10) << nickName;
-	std::cout << std::endl;
 	//lastname
 	if (lastName.length() > 10)
 		std::cout << lastName.substr(0,9) << ".";

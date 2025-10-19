@@ -1,10 +1,9 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = phonebook
+NAME = account
 
-SRC =	Contact.cpp \
-		PhoneBook.cpp \
-		main.cpp
+SRC = 	Account.cpp \
+		tests.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -17,7 +16,7 @@ $(NAME) : $(OBJ)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) 
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

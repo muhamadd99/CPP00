@@ -6,7 +6,7 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 14:58:05 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/17 10:51:29 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/17 21:57:50 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,27 @@ int	main()
 	
 	while (true)
 	{
-		std::cout << "What do you want? ADD / SEARCH / EXIT" << std::endl;
+		std::cout << YELLOW << "What do you want. Ni yao shenme? ADD / SEARCH / EXIT" << RESET << std::endl;
 		std::getline(std::cin, command);
-
+		if (std::cin.eof())
+		{
+			std::cout << RED << "\n EOF" << RESET << std::endl;
+			break ;
+		}
 		if (command == "ADD")
-			pBook.addContact();
+		{
+			if (!pBook.addContact())
+				break ;
+		}
 		else if (command == "SEARCH")
-			pBook.searchContacts();
+		{
+			if (!pBook.searchContacts())
+				break ;
+		}
 		else if  (command == "EXIT")
 			break ;
 		else
-			std::cout << "Invalid command\n";
+			std::cout << RED << "Invalid command\n" << RESET << std::endl;
 	}
 	return (0);
 }
