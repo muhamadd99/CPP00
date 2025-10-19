@@ -6,13 +6,15 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 15:40:39 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/17 21:59:29 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/19 17:40:18 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./PhoneBook.hpp"
 #include "Contact.hpp"
 #include <ostream>
+#include <iostream> //cout cin
+#include <string> //std::string
 
 PhoneBook::PhoneBook() : contactCount(0) {}
 
@@ -103,22 +105,22 @@ bool	PhoneBook::addContact()
 			contacts[i] = contacts[i + 1];
 		contacts[7].setContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
 	}
-	// if (contactCount < 8)
-	// {
-	// 	for (int i = contactCount - 1; i >= 0; i--)
-	// 		contacts[i + 1] = contacts[i];
-	// 	contacts[0].setContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
-	// 	contactCount++;
-	// }
-	// else
-	// {
-	// 	for (int i = 6; i > 0; i--)
-	// 		contacts[i + 1] = contacts[i];
-	// 	contacts[0].setContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
-	// }
 	std::cout << CYAN << "Zuò wán le" << RESET << std::endl;
 	return (true);
 }
+// if (contactCount < 8)
+// {
+// 	for (int i = contactCount - 1; i >= 0; i--)
+// 		contacts[i + 1] = contacts[i];
+// 	contacts[0].setContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
+// 	contactCount++;
+// }
+// else
+// {
+// 	for (int i = 6; i > 0; i--)
+// 		contacts[i + 1] = contacts[i];
+// 	contacts[0].setContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
+// }
 
 //print the first 2 lines
 //display every contact w/ proper spacing

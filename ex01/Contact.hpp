@@ -6,7 +6,7 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 18:25:29 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/19 15:26:01 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:17:48 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 # define RED     "\033[1;31m"
 # define RESET   "\033[0m"
 
-# include <iostream>
-# include <string>
-# include <iomanip>
+# include <string> // std::string
 
 class Contact {
 private:
@@ -40,11 +38,11 @@ public:
 	bool isEmpty() const;
 
 	//getters
-	std::string getFirstName() const;
-	std::string getLastName() const;
-	std::string getNickName() const;
-	std::string getPhoneNumber() const;
-	std::string getDarkestSecret() const;
+	// std::string getFirstName() const;
+	// std::string getLastName() const;
+	// std::string getNickName() const;
+	// std::string getPhoneNumber() const;
+	// std::string getDarkestSecret() const;
 };
 
 #endif

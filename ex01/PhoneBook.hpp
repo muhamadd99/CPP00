@@ -6,7 +6,7 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 15:40:34 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/19 15:26:07 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/19 17:39:47 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@
 # define RED     "\033[1;31m" 
 # define RESET   "\033[0m"
 
-# include <iomanip>
-# include <iostream>
-# include <string>
 //# include <cstdlib>
 # include "Contact.hpp"
 

@@ -6,11 +6,13 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 17:05:12 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/17 22:06:27 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:03:50 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Contact.hpp"
+# include <iomanip> //setw
+# include <iostream> //cout cin & endl
 
 void	Contact::displayFull() const
 {
@@ -40,7 +42,7 @@ void	Contact::displaySummary(int index) const
 		return ;
 
 	//index spaces
-	std::cout << std::setw(10) << index + 1<< "|";
+	std::cout << std::setw(10) << index + 1 << "|";
 
 	//firstname
 	if (firstName.length() > 10)
