@@ -6,7 +6,7 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 15:40:34 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/19 17:39:47 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/20 09:33:03 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ public:
 
 	bool	addContact(); //no need parameter bcus cin take directly
 	bool	searchContacts() const;
+	bool	str_onlywspace(const std::string& str) const;
 }; //end of class definition
 
 #endif

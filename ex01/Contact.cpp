@@ -6,7 +6,7 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 17:05:12 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/19 18:03:50 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/20 08:14:08 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	Contact::displayFull() const
 {
-	if (isEmpty()) { //do i need to print it wrong
+	if (isEmpty()) {
 		std::cout << RED << "No Contacts to display. méiyǒu liánxì rén" << RESET << std::endl;
 		return ;
 	}
@@ -76,28 +76,3 @@ void	Contact::setContact(std::string first, std::string last,
 	phoneNumber = phone;
 	darkestSecret = secret;
 }
-
-// std::string	Contact::getFirstName() const
-// {
-// 	return (firstName);
-// }
-
-// std::string Contact::getLastName() const
-// {
-// 	return (lastName);
-// }
-
-// std::string Contact::getNickName() const
-// {
-// 	return (nickName);
-// }
-
-// std::string Contact::getPhoneNumber() const
-// {
-// 	return (phoneNumber);
-// }
-
-// std::string Contact::getDarkestSecret() const
-// {
-// 	return (darkestSecret);
-// }

@@ -6,7 +6,7 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 18:25:29 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/19 18:17:48 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/20 08:13:40 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,6 @@ public:
 	void displaySummary(int index) const;
 	void displayFull() const;
 	bool isEmpty() const;
-
-	//getters
-	// std::string getFirstName() const;
-	// std::string getLastName() const;
-	// std::string getNickName() const;
-	// std::string getPhoneNumber() const;
-	// std::string getDarkestSecret() const;
 };
 
 #endif

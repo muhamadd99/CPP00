@@ -6,7 +6,7 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 15:40:39 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/19 17:40:18 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/20 09:32:50 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@
 #include <string> //std::string
 
 PhoneBook::PhoneBook() : contactCount(0) {}
+
+bool	PhoneBook::str_onlywspace(const std::string& str) const
+{
+	for (size_t i = 0; i < str.length(); i++)
+		if(!std::isspace(str[i]))
+			return (false);
+	return (true);
+}
 
 //print question every variable
 //take answer every variable
@@ -38,7 +46,7 @@ bool	PhoneBook::addContact()
 			std::cout << RED <<"\n EOF signal" << RESET << std::endl;
 			return (false);
 		}
-		if (!firstName.empty())
+		if (!str_onlywspace(firstName) && !firstName.empty())
 			break ;
 		std::cout << RED << "Can't be empty. bù néng wéi kōng" << RESET << std::endl;
 	}
@@ -51,7 +59,7 @@ bool	PhoneBook::addContact()
 			std::cout << RED << "\n EOF signal" << RESET << std::endl;
 			return (false);
 		}
-		if (!lastName.empty())
+		if (!str_onlywspace(lastName) && !lastName.empty())
 			break ;
 		std::cout << RED << "Can't be empty. bù néng wéi kōng" << RESET << std::endl;
 	}
@@ -64,7 +72,7 @@ bool	PhoneBook::addContact()
 			std::cout << RED << "\nEOF signal" << RESET << std::endl;
 			return (false);
 		}
-		if (!nickname.empty())
+		if (!str_onlywspace(nickname) && !nickname.empty())
 			break ;
 		std::cout << RED << "Can't be empty. bù néng wéi kōng" << RESET << std::endl;
 	}
@@ -77,7 +85,7 @@ bool	PhoneBook::addContact()
 			std::cout << RED << "\nEOF signal" << RESET << std::endl;
 			return (false);
 		}
-		if (!phoneNumber.empty())
+		if (!str_onlywspace(phoneNumber) && !phoneNumber.empty())
 			break ;
 		std::cout << RED << "Can't be empty. bù néng wéi kōng" << RESET <<  std::endl;
 	}
@@ -90,7 +98,7 @@ bool	PhoneBook::addContact()
 			std::cout << RED << "\nEOF signal" << RESET << std::endl;
 			return (false);
 		}
-		if (!darkestSecret.empty())
+		if (!str_onlywspace(darkestSecret) && !darkestSecret.empty())
 			break ;
 		std::cout << RED << "Can't be empty. bù néng wéi kōng" << RESET << std::endl;
 	}
@@ -167,70 +175,3 @@ bool	PhoneBook::searchContacts() const
 		std::cout << RED <<  "\nNo contacts to display. méiyǒu liánxì rén" << RESET << std::endl;
 	return (true);
 }
-
-// //print the first 2 lines
-// //display every contact w/ proper spacing
-// //display firstname
-// //display lastname
-// //display nickname
-// //print enter index and take input
-// //convert input to integer and check the number valid or not
-// //if no contacts print no contact
-// //if have contacts ask which index is it? take cin
-// //change to int and check it is valid or not. if it is below contact number then print
-// //if not, print invalid index
-// void	PhoneBook::searchContacts() const
-// {
-// 	std::cout << "Index     |First Name|Last Name |Nickname  " << std::endl;
-// 	std::cout << "----------|----------|----------|----------" << std::endl;
-
-// 	for(int i = 0; i < contactCount; i++)
-// 	{
-// 		//index spaces
-// 		std::cout << std::setw(10) << i << "|";
-		
-// 		//firstname
-// 		std::string firstName = contacts[i].getFirstName();
-// 		if (firstName.length() > 10)
-// 			std::cout << firstName.substr(0, 9) << ".";
-// 		else
-// 			std::cout << std::setw(10) << firstName;
-// 		std::cout << "|";
-
-// 		//lastname
-// 		std::string lastName = contacts[i].getLastName();
-// 		if (lastName.length() > 10)
-// 			std::cout << lastName.substr(0,9) << ".";
-// 		else
-// 			std::cout << std::setw(10) << lastName;
-// 		std::cout << "|";
-		
-// 		//nickName
-// 		std::string nickName = contacts[i].getNickName();
-// 		if (nickName.length() > 10)
-// 			std::cout << nickName.substr(0,9) << ".";
-// 		else
-// 			std::cout << std::setw(10) << nickName;
-// 		std::cout << std::endl;
-// 	}
-// 	//start asking which index we want specifically?
-// 	if (contactCount > 0)
-// 	{
-// 		//do we need to print \n before this statement?
-// 		std::cout << "\nWhich index you want? Nǐ yào nǎ ge suǒyǐn";
-// 		std::string input;
-// 		std::getline(std::cin, input);
-// 		if (input.length() == 1 && input[0] >= '0' && input[0] <= '7') //need to check this one
-// 		{
-// 			int index = input[0] - '0';
-// 			if (index < contactCount)
-// 				contacts[index].displayFull();
-// 			else
-// 				std::cout << "Invalid index! Suǒyǐn bù duì" << std::endl;
-// 		}
-// 		else
-// 			std::cout << "Invalid index! Suǒyǐn bù duì" << std::endl;
-// 	}
-// 	else
-// 		std::cout << "\nNo contacts to display. méiyǒu liánxì rén";
-// }
