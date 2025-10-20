@@ -8,7 +8,7 @@
 // ************************************************************************** //
 
 
-#pragma once
+#pragma once //only include this file once
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
 
@@ -43,14 +43,14 @@ public:
 
 private:
 
-	static int	_nbAccounts; //number of total account?
+	static int	_nbAccounts; //number of total account
 	static int	_totalAmount;
-	static int	_totalNbDeposits; //what is the difference with not total? does it mean one individual and for all individuals?
-	static int	_totalNbWithdrawals; //same questions
+	static int	_totalNbDeposits; //for all total deposits count
+	static int	_totalNbWithdrawals; //for all total withdrawal count
 
 	static void	_displayTimestamp( void );
 
-	int				_accountIndex; //so  this one mean for one individual?
+	int				_accountIndex; //for one individual
 	int				_amount;
 	int				_nbDeposits;
 	int				_nbWithdrawals;

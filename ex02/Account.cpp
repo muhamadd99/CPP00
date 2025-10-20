@@ -6,15 +6,15 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 07:29:29 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/19 15:47:49 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/20 17:14:34 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include <sstream>
+#include <iostream> //cin cout endl
+#include <string> //std::string
+#include <sstream> //stringstream class
 #include <ctime>    // for std::time, std::localtime, std::strftime
-#include <cstring>
+#include <cstring> //strftime
 #include "./Account.hpp"
 
 int	Account::_nbAccounts = 0;
@@ -138,10 +138,10 @@ void Account::displayStatus(void) const
 
 void Account::_displayTimestamp(void) 
 {
-	std::time_t now = std::time(0);
+	std::time_t now = std::time(0); //get current time since 1970 in secs format
 	std::tm* localTime = std::localtime(&now); //tm a struct w/ separated time components
 
-	char buffer[20];
-	std::strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S", localTime);
+	char buffer[20]; //buffer to store strings
+	std::strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S", localTime);//
 	std::cout << "[" << buffer << "] ";
 }

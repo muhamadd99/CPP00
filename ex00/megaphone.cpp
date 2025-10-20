@@ -6,7 +6,7 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 16:47:27 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/09 13:39:33 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/20 10:23:53 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 	for (int i = 1; av[i]; i++)
 	{
 		for (int j = 0; av[i][j]; j++)
-			std::cout << (char)std::toupper(av[i][j]);
+			std::cout << std::toupper(av[i][j]);
 	}
 	std::cout << std::endl;
 	return (0);

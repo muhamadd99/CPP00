@@ -6,13 +6,12 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 15:40:39 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/20 09:32:50 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/20 14:13:40 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./PhoneBook.hpp"
 #include "Contact.hpp"
-#include <ostream>
 #include <iostream> //cout cin
 #include <string> //std::string
 
@@ -26,6 +25,26 @@ bool	PhoneBook::str_onlywspace(const std::string& str) const
 	return (true);
 }
 
+std::string	PhoneBook::get_valid_str(const std::string& message)
+{
+	std::string input;
+
+	while (true)
+	{
+		std::cout << CYAN << message << RESET << std::endl;
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << RED <<"\n EOF signal" << RESET << std::endl;
+			return ("");
+		}
+		if (!str_onlywspace(input) && !input.empty())
+			break ;
+		std::cout << RED << "Can't be empty. bù néng wéi kōng" << RESET << std::endl;
+	}
+	return (input);
+}
+
 //print question every variable
 //take answer every variable
 //register all variable into each contact
@@ -37,71 +56,21 @@ bool	PhoneBook::addContact()
 	
 	std::cout << CYAN << "1 name. Qǐng gěi wǒ yí gè rén míngzì." << RESET << std::endl;
 
-	while(true)
-	{
-		std::cout << CYAN << "First name. Mingzi: " << RESET << std::endl; 
-		std::getline(std::cin, firstName);
-		if (std::cin.eof())
-		{
-			std::cout << RED <<"\n EOF signal" << RESET << std::endl;
-			return (false);
-		}
-		if (!str_onlywspace(firstName) && !firstName.empty())
-			break ;
-		std::cout << RED << "Can't be empty. bù néng wéi kōng" << RESET << std::endl;
-	}
-	while (true)
-	{
-		std::cout << CYAN << "Last name. xìng: " << RESET << std::endl;
-		std::getline(std::cin, lastName);
-		if (std::cin.eof())
-		{
-			std::cout << RED << "\n EOF signal" << RESET << std::endl;
-			return (false);
-		}
-		if (!str_onlywspace(lastName) && !lastName.empty())
-			break ;
-		std::cout << RED << "Can't be empty. bù néng wéi kōng" << RESET << std::endl;
-	}
-	while(true)
-	{
-		std::cout << CYAN <<  "Nickname. chuòhào: " << RESET << std::endl;
-		std::getline(std::cin, nickname);
-		if (std::cin.eof())
-		{
-			std::cout << RED << "\nEOF signal" << RESET << std::endl;
-			return (false);
-		}
-		if (!str_onlywspace(nickname) && !nickname.empty())
-			break ;
-		std::cout << RED << "Can't be empty. bù néng wéi kōng" << RESET << std::endl;
-	}
-	while(true)
-	{
-		std::cout << CYAN << "Phone number. diànhuà hàomǎ: " << RESET << std::endl;
-		std::getline(std::cin, phoneNumber);
-		if (std::cin.eof())
-		{
-			std::cout << RED << "\nEOF signal" << RESET << std::endl;
-			return (false);
-		}
-		if (!str_onlywspace(phoneNumber) && !phoneNumber.empty())
-			break ;
-		std::cout << RED << "Can't be empty. bù néng wéi kōng" << RESET <<  std::endl;
-	}
-	while (true)
-	{
-		std::cout << CYAN << "Darkest secret. zuì shēn de mìmì: " << RESET << std::endl;
-		std::getline(std::cin, darkestSecret);
-		if (std::cin.eof())
-		{
-			std::cout << RED << "\nEOF signal" << RESET << std::endl;
-			return (false);
-		}
-		if (!str_onlywspace(darkestSecret) && !darkestSecret.empty())
-			break ;
-		std::cout << RED << "Can't be empty. bù néng wéi kōng" << RESET << std::endl;
-	}
+	firstName = get_valid_str("First name / Míngzì: ");
+	if (firstName.empty())
+		return (false);
+	lastName = get_valid_str("Last name. xìng: ");
+	if (lastName.empty())
+		return (false);
+	nickname = get_valid_str("Nickname. chuòhào: ");
+	if (nickname.empty())
+		return (false);
+	phoneNumber = get_valid_str("Phone number. diànhuà hàomǎ: ");
+	if (phoneNumber.empty())
+		return (false);
+	darkestSecret = get_valid_str("Darkest secret. zuì shēn de mìmì: ");
+	if (darkestSecret.empty())
+		return (false);
 	if (contactCount < 8)
 	{
 		contacts[contactCount].setContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
@@ -130,17 +99,6 @@ bool	PhoneBook::addContact()
 // 	contacts[0].setContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
 // }
 
-//print the first 2 lines
-//display every contact w/ proper spacing
-//display firstname
-//display lastname
-//display nickname
-//print enter index and take input
-//convert input to integer and check the number valid or not
-//if no contacts print no contact
-//if have contacts ask which index is it? take cin
-//change to int and check it is valid or not. if it is below contact number then print
-//if not, print invalid index
 bool	PhoneBook::searchContacts() const
 {
 	std::cout << "Index     |First Name|Last Name |Nickname  " << std::endl;
@@ -148,10 +106,8 @@ bool	PhoneBook::searchContacts() const
 
 	for(int i = 0; i < contactCount; i++)
 		contacts[i].displaySummary(i);
-	//start asking which index we want specifically?
 	if (contactCount > 0)
 	{
-		//do we need to print \n before this statement?
 		std::cout << "\nWhich index you want? Nǐ yào nǎ ge suǒyǐn" << std::endl;
 		std::string input;
 		std::getline(std::cin, input);
@@ -160,9 +116,9 @@ bool	PhoneBook::searchContacts() const
 			std::cout << RED << "\n EOF" << RESET << std::endl;
 			return (false);
 		}
-		if (input.length() == 1 && input[0] > '0' && input[0] < '9') //need to check this one
+		if (input.length() == 1 && input[0] > '0' && input[0] < '9')
 		{
-			int index = input[0] - '0' - 1; // -1 bcus in my program all start to count with 0. but from user it appears starting from 1. 1 from user is 0 for me.
+			int index = input[0] - '0' - 1;
 			if (index < contactCount)
 				contacts[index].displayFull();
 			else
