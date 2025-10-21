@@ -6,7 +6,7 @@
 /*   By: mbani-ya <mbani-ya@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 16:47:27 by mbani-ya          #+#    #+#             */
-/*   Updated: 2025/10/20 22:59:47 by mbani-ya         ###   ########.fr       */
+/*   Updated: 2025/10/21 17:17:27 by mbani-ya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int	main(int ac, char **av)
 {
 	if (ac == 1)
 	{
-		std::cout << "LOUD AND UNBEARABLE FEEDBACK NOISE" << std::endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);
 	}
 	for (int i = 1; av[i]; i++)
 	{
 		for (int j = 0; av[i][j]; j++)
-			std::cout << std::toupper(av[i][j]);
+			std::cout << static_cast<char>(std::toupper(av[i][j]));
 	}
 	std::cout << std::endl;
 	return (0);

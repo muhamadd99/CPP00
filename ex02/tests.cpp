@@ -40,9 +40,7 @@ int		main( void ) {
 	Account::displayAccountsInfos(); //show total across all acc
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) ); //show each acc individually
 	//starting from acc_begin to acc_end. call the function displaystatus
-	for ( acc_int_t it( acc_begin, dep_begin ); //
-		  it.first != acc_end && it.second != dep_end;
-		  ++(it.first), ++(it.second) ) { //pre increment because post increment do extra work. memorize value b4 increment
+	for ( acc_int_t it( acc_begin, dep_begin );it.first != acc_end && it.second != dep_end;++(it.first), ++(it.second) ) { //pre increment because post increment do extra work. memorize value b4 increment
 
 		(*(it.first)).makeDeposit( *(it.second) );//dereference account then makedeposit then pass deposit
 	}
